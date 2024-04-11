@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Objects</title>
+        <style>
+           
+        </style>
+    </head>
+    <body>
+        
+        <script>
+            /*const product = {
+                name : 'socks',
+                price : 1090
+            };
+
+            console.log(product);
+            console.log(product.name);
+            console.log(product.price);
+
+            product.name = 'cotton socks';
+            console.log(product);
+            product.quantity = 10;
+            console.log(product);
+
+            delete product.quantity;
+            console.log(product);*/
+
+            /*const product2 ={
+                name : 'shirt',
+                'delivery-time':'1 day',
+                rating:{
+                    stars:4.5,
+                    count : 87
+                },
+                fun: function function1(){
+                    console.log('function inside object');
+                }
+            };
+            product2.fun();
+
+            console.log(JSON.stringify(product2));
+            const jsonString = JSON.stringify(product2);
+            console.log(JSON.parse(jsonString));*/
+
+            console.log('hello'.length);
+            console.log('hello'.toUpperCase());
+
+            const object1 = {
+                message:'hello' 
+            };
+
+            const object2 = object1;
+
+            object1.message = 'good job';
+            console.log(object1);
+            console.log(object2);
+
+            const object3 ={
+                message:'good job'
+            };
+
+            if (object3 != object1){
+                console.log('The statement is true, because variable stores refernce not the actual value and as both have difference refernces they are not equal');
+            };
+
+            if(object2 === object1){
+                console.log('True, because in above statement object2 = object1 i.e, they share the same reference and hence the statement is correct');
+            }
+
+            const object4 ={
+                message:'good job',
+                price : 79
+            };
+
+
+            //Destructuring of object - Destructuring in JavaScript is a way to extract values from objects or arrays and assign them to variables in a more concise and convenient manner. 
+            //const message = object4.message;
+            const{message ,price} = object4;
+            console.log(message);
+            console.log(price);
+
+            //shorthand property
+            const object5 = {
+                //method1-message : message
+                //method2-
+                message,
+
+            //*********shorthand method*********
+                //long mtd.
+                method: function function1(){
+                    console.log('method');
+                },
+
+                //shortcut mtd
+                method() {
+                    console.log('method');
+                }
+                /*both the lines will give the same o/p 'method' but in console we'll get only one 'method'....RESASON:When you define methods within an object, if you define them with the same name, the latter one will overwrite the former one. In your case, both methods have the same name method. Therefore, the "shortcut method" syntax will overwrite the "long method" syntax*/
+            };
+            console.log(object5);
+            object5.method();
+            
+        </script>
+    </body>
+</html>

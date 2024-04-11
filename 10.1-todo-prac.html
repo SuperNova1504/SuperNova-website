@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Todo Practice</title>
+</head>
+<body>
+   <script>
+        const nums = [10,20,30,56];
+        
+        function getLastValue(array){
+            const n = array.length;
+            const lastElement = array[n-1];
+            return lastElement;
+        }
+        
+        function arraySwap(array){
+            const len = array.length;
+            const a = array[0];
+            const b = array[len - 1];
+            array[0] = b;
+            array[len - 1] = a;
+            return array;
+        }
+        
+        for(let i =0;i<=10;i++){
+            if(i%2 === 0){
+                console.log(i);
+            }
+        }
+
+        for(let i = 5; i>=0 ; i--){
+            console.log(i);
+        }
+
+        const doubleNums = [];
+        for(let i = 0 ;i <= nums.length-1 ; i++){
+            const n = nums[i];
+            doubleNums.push(n*2);
+        }
+
+        console.log(doubleNums);
+
+        function addOne(array){
+
+            for(let i = 0 ;i <= nums.length-1 ; i++){
+                const n = nums[i];
+                array[i] = array[i]+1;
+            }
+            return array;
+        }
+
+        console.log(addOne(nums));
+
+        function arrayMin(array){
+            let min = array[0];
+            for(let i=1 ;  i< array.length;i++){
+                if(min > array[i]){
+                    min = array[i];
+                }
+            }
+            return min;
+        }
+
+        function arrayMax(array){
+            let max = array[0];
+            for(let i=1 ;  i< array.length;i++){
+                if(max < array[i]){
+                    max = array[i];
+                }
+            }
+            return max;
+        }
+
+        function minMax(array){
+            if(array.length === 0){
+                return {min: null, max: null};
+            }
+
+            else if(array.length === 1){
+                return {min:array[0] , max:array[0]};
+            }
+            else{
+                const minValue = arrayMin(array);
+                const maxValue = arrayMax(array);
+                return {min: minValue, max : maxValue};
+            }
+        }
+
+        const abc = [];   
+        console.log(minMax(nums));
+        console.log(minMax(abc));
+
+   </script>
+</body>
+</html>

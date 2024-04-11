@@ -1,0 +1,158 @@
+<!--<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Billing System</title>
+</head>
+<body>
+  <h1>Billing System</h1>
+  <div id="items">
+    <label>Item name: <input type="text" id="itemName"></label>
+    <label>Price: $<input type="number" id="itemPrice"></label>
+    <label>Quantity: <input type="number" id="itemQuantity"></label>
+    <button onclick="addItem()">Add Item</button>
+  </div>
+  <hr>
+  <h2>Invoice</h2>
+  <table id="invoiceTable">
+    <tr>
+      <th>Item</th>
+      <th>Price</th>
+      <th>Quantity</th>
+      <th>Total</th>
+    </tr>
+  </table>
+  <div id="total">
+    <h3>Total Amount: $<span id="totalAmount">0</span></h3>
+  </div>
+
+  <script>
+    let items = [];
+
+    function addItem() {
+      const itemName = document.getElementById('itemName').value;
+      const itemPrice = parseFloat(document.getElementById('itemPrice').value);
+      const itemQuantity = parseInt(document.getElementById('itemQuantity').value);
+
+      if (itemName && itemPrice && itemQuantity) {
+        const total = itemPrice * itemQuantity;
+        items.push({ name: itemName, price: itemPrice, quantity: itemQuantity, total: total });
+        updateInvoice();
+      } else {
+        alert('Please fill all the fields');
+      }
+    }
+
+    function updateInvoice() {
+      const invoiceTable = document.getElementById('invoiceTable');
+      const totalAmountElement = document.getElementById('totalAmount');
+      let totalAmount = 0;
+
+      // Clear existing rows
+      invoiceTable.innerHTML = '<tr><th>Item</th><th>Price</th><th>Quantity</th><th>Total</th></tr>';
+
+      // Populate rows with items
+      items.forEach(item => {
+        const row = invoiceTable.insertRow();
+        const nameCell = row.insertCell(0);
+        const priceCell = row.insertCell(1);
+        const quantityCell = row.insertCell(2);
+        const totalCell = row.insertCell(3);
+
+        nameCell.innerHTML = item.name;
+        priceCell.innerHTML = '$' + item.price.toFixed(2);
+        quantityCell.innerHTML = item.quantity;
+        totalCell.innerHTML = '$' + item.total.toFixed(2);
+
+        totalAmount += item.total;
+      });
+
+      // Update total amount
+      totalAmountElement.textContent = totalAmount.toFixed(2);
+    }
+  </script>
+</body>
+</html>-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Billing System</title>
+</head>
+<body>
+  <h1>Billing System</h1>
+  <div id="items">
+    <label>Item name: <input type="text" id="itemName"></label>
+    <label>Price: $<input type="number" id="itemPrice"></label>
+    <label>Quantity: <input type="number" id="itemQuantity"></label>
+    <button onclick="addItem()">Add Item</button>
+  </div>
+  <hr>
+  <h2>Invoice</h2>
+  <table id="invoiceTable">
+    <tr>
+      <th>Item</th>
+      <th>Price</th>
+      <th>Quantity</th>
+      <th>Total</th>
+    </tr>
+  </table>
+  <div id="total">
+    <h3>Total Amount: $<span id="totalAmount">0</span></h3>
+    <button onclick="printBill()">Print Bill</button>
+  </div>
+
+  <script>
+    let items = [];
+
+    function addItem() {
+      const itemName = document.getElementById('itemName').value;
+      const itemPrice = parseFloat(document.getElementById('itemPrice').value);
+      const itemQuantity = parseInt(document.getElementById('itemQuantity').value);
+
+      if (itemName && itemPrice && itemQuantity) {
+        const total = itemPrice * itemQuantity;
+        items.push({ name: itemName, price: itemPrice, quantity: itemQuantity, total: total });
+        updateInvoice();
+      } else {
+        alert('Please fill all the fields');
+      }
+    }
+
+    function updateInvoice() {
+      const invoiceTable = document.getElementById('invoiceTable');
+      const totalAmountElement = document.getElementById('totalAmount');
+      let totalAmount = 0;
+
+      // Clear existing rows
+      invoiceTable.innerHTML = '<tr><th>Item</th><th>Price</th><th>Quantity</th><th>Total</th></tr>';
+
+      // Populate rows with items
+      items.forEach(item => {
+        const row = invoiceTable.insertRow();
+        const nameCell = row.insertCell(0);
+        const priceCell = row.insertCell(1);
+        const quantityCell = row.insertCell(2);
+        const totalCell = row.insertCell(3);
+
+        nameCell.innerHTML = item.name;
+        priceCell.innerHTML = '$' + item.price.toFixed(2);
+        quantityCell.innerHTML = item.quantity;
+        totalCell.innerHTML = '$' + item.total.toFixed(2);
+
+        totalAmount += item.total;
+      });
+
+      // Update total amount
+      totalAmountElement.textContent = totalAmount.toFixed(2);
+    }
+
+    function printBill() {
+      window.print();
+    }
+  </script>
+</body>
+</html>

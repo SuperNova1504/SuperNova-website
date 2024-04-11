@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Practice</title>
+</head>
+
+<body>
+    <button>9a</button>
+    <button class="querySelector">9b</button>
+    <br><br><br>
+    <button onclick="
+    toss('heads');" class="js-toss">heads</button>
+    <button onclick="
+    toss('tails');" class="js-toss">tails</button>
+    <p class="js-res"></p>
+    <br>
+
+    <!--******Name Project******-->
+    <input placeholder="Name" class="js-name"
+    onkeydown="
+    YourNameOnclick();">
+    <button onclick="
+    displayName();">Submit</button>
+    <p class="js-yourName"></p> 
+
+    <script>
+        console.log(document.querySelector('button'));
+        document.querySelector('.querySelector').innerHTML = '9b done!';
+        
+        let res;
+        function toss(Result){
+            res = (Result === 'heads')? 'heads':'tails';
+            document.querySelector('.js-res').innerHTML = `You chose: ${res}`;
+            return res;
+        }
+
+        function displayName(){
+            let name = document.querySelector('.js-name');
+            let yourName = name.value;
+            document.querySelector('.js-yourName').innerHTML=`Your name is:${yourName}`;
+        }
+
+        function YourNameOnclick(){
+            if(event.key === 'Enter'){
+                displayName();
+            }
+        }
+    </script>
+</body>
+</html>
+

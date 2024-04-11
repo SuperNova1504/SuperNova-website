@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Advace Functions</title>
+</head>
+<body>
+    <script>
+        /*function greeting(){
+            console.log('Hello');
+        }
+        greeting();
+        const num = 2;
+        const function1 = function greeting(){
+            console.log('hello2');
+        };
+
+        console.log(function1);
+        console.log(typeof function1);
+        function1();
+
+        const object1 = {
+            num : 2,
+            fun  : function greeting(){
+                console.log('hello3');
+            }
+        };
+        object1.fun();
+
+        function display(param){
+            console.log(param);
+        }
+
+        display(2);
+
+        function run(param){
+            param();
+        }
+
+        run(function(){
+            console.log('hello4');
+        });*/
+
+        /*
+In JavaScript, the setTimeout() function is used to execute a function or evaluate an expression after a specified delay, measured in milliseconds. Here's the basic syntax:
+
+setTimeout(function, delay, param1, param2, ...);
+
+    function: The function or code to be executed after the delay.
+    delay: The time to wait before executing the function, in milliseconds.
+    param1, param2, ...: Optional parameters to be passed to the function when it is executed*/
+
+        /*setTimeout(function(){
+            console.log('timeout');
+            console.log('timeout2');
+        },3000);
+
+        console.log('next line');*/
+
+        
+/*In JavaScript, the setInterval() function is used to repeatedly execute a function or evaluate an expression at fixed intervals. Here's the basic syntax:
+
+setInterval(function, delay, param1, param2, ...);
+
+    function: The function or code to be executed at each interval.
+    delay: The time interval between each execution of the function, in milliseconds.
+    param1, param2, ...: Optional parameters to be passed to the function each time it is executed*/
+
+    /*setInterval(function(){
+        console.log('interval');
+    },3000);
+
+    console.log('next interval');*/
+
+    [
+        'make dinner',
+        'wash dishes',
+        'watch youtube'
+    ].forEach(function(value,index) {
+        console.log(index),console.log(value);
+    });
+
+    </script>
+</body>
+</html>

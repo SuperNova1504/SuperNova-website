@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>DOM project</title>
+</head>
+<body>
+<p>Youtube Subscribe Button</p>
+<button onclick="
+    subscribe();" 
+    class="js-subscribe-button">
+    Subscribe</button>
+
+    <p>Amazon Shipping Calculator</p>
+    <input placeholder="Cost of order" class="js-cost-input" 
+    onkeydown="
+     handleCostKeydown(event);
+    ">
+    <button onclick="
+        calculateTotal();
+    ">Calculate</button>
+
+    <p class="js-total-cost"></p>
+
+
+    <script>
+        function handleCostKeydown(event){
+            if(event.key === 'Enter'){
+                calculateTotal();
+            }
+        }
+
+        function calculateTotal(){
+            const inputElement = document.querySelector('.js-cost-input');
+            //<input> is a void element that's why it can't be altered using .innerHTML therefore ".value"  is used.
+
+            // initally the datatype of 'cost' is String but we need it to be integer for calculation. So 'Number' function is used..
+            let cost = Number(inputElement.value);
+
+            if(cost < 500){
+                cost = cost + 40;
+            }
+
+            document.querySelector('.js-total-cost')
+            .innerHTML=`Total : ₹${cost}`;
+        }
+
+
+        function subscribe(){
+            const buttonElement = document.querySelector('.js-subscribe-button');
+
+            //here in 'if' condition we are using innerText instead of innerHTML because if we give spaces around the button the code won't work, but innerText don't consider the spaces and just read the text.'
+            if(buttonElement.innerText === 'Subscribe'){
+                buttonElement.innerHTML = 'Subscribed';
+            }
+            else{
+                buttonElement.innerText = 'Subscribe';
+            }
+        }
+    </script>
+</body>
+</html>
